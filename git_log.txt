@@ -1,0 +1,29 @@
+commit bb74c35af8661914af827102c1e3b23eec648777
+Author: kwishtt <2321050065@student.humg.edu.vn>
+Date:   Thu Nov 27 00:04:01 2025 +0700
+
+    comit
+
+commit 176949163f766b0b30951ca2e20caa13c5b01d3f
+Author: kwishtt <2321050065@student.humg.edu.vn>
+Date:   Wed Nov 26 23:57:48 2025 +0700
+
+    Add model file with LFS
+
+commit 0fc344c0820f3a0f39ad1b646f24722946cec4b2
+Author: kwishtt <2321050065@student.humg.edu.vn>
+Date:   Wed Nov 26 23:56:30 2025 +0700
+
+    Configure Git LFS
+
+commit a2bb881ef768ccbd38fc2571184ff1ef1daede93
+Author: kwishtt <2321050065@student.humg.edu.vn>
+Date:   Wed Nov 26 23:51:55 2025 +0700
+
+    Add large model file using Git LFS
+
+commit da331929c22eb82dc86b5095a90a815b9431c6c7
+Author: kwishtt <2321050065@student.humg.edu.vn>
+Date:   Wed Nov 26 23:49:58 2025 +0700
+
+    chore: Xóa các file tạm `model_files.txt` và `file_list.txt`.

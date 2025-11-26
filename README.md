@@ -1,6 +1,6 @@
 # 📘 BÁO CÁO CHI TIẾT QUÁ TRÌNH PHÁT TRIỂN DỰ ÁN: VIETHEALTH AI
 **Chủ đề:** Phân tích thói quen sử dụng thực phẩm và dự đoán tiểu đường
-**Người thực hiện:** Antigravity (Trợ lý AI)
+**Người thực hiện:** Antigravity (Trợ lý AI) & kwishtt
 **Ngày hoàn thành:** 26/11/2025
 
 ---
