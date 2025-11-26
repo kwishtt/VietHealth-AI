@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# Large Model Files (>100MB)
+model/*.pkl
+*.h5
+*.pt
+
+# OS
+.DS_Store

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VietHealth AI - Dự đoán Sức khỏe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>VietHealth AI</span>
+            </div>
+            <p class="subtitle">Phân tích thói quen ăn uống & Dự đoán nguy cơ bệnh lý</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Input Section -->
+            <section class="card input-section">
+                <h2><i class="fa-solid fa-user-doctor"></i> Hồ sơ sức khỏe</h2>
+                <form id="healthForm">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Tuổi</label>
+                            <input type="number" id="age" value="25" min="1" max="120">
+                        </div>
+                        <div class="input-group">
+                            <label>Giới tính</label>
+                            <select id="gender">
+                                <option value="Male">Nam</option>
+                                <option value="Female">Nữ</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Chiều cao (cm)</label>
+                            <input type="number" id="height" value="170">
+                        </div>
+                        <div class="input-group">
+                            <label>Cân nặng (kg)</label>
+                            <input type="number" id="weight" value="65">
+                        </div>
+                        <div class="input-group full-width">
+                            <label>Tiền sử hút thuốc</label>
+                            <select id="smoking">
+                                <option value="0">Không bao giờ (Never)</option>
+                                <option value="1">Đã từng (Former)</option>
+                                <option value="2">Đang hút (Current)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="food-input-container">
+                        <label><i class="fa-solid fa-utensils"></i> Hôm nay bạn ăn gì?</label>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="foodInput" placeholder="Nhập tên món ăn (VD: Phở bò)..."
+                                autocomplete="off">
+                            <div id="suggestions" class="suggestions-list"></div>
+                        </div>
+                        <div id="selectedFoods" class="selected-tags">
+                            <!-- Selected food tags will appear here -->
+                        </div>
+                        <!-- Hidden input to store final list for backend -->
+                        <input type="hidden" id="foodText">
+                    </div>
+
+                    <button type="submit" class="btn-analyze">
+                        <span>Phân tích ngay</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Result Section (Hidden by default) -->
+            <section class="card result-section" id="resultSection" style="display: none;">
+                <div class="result-header">
+                    <h2><i class="fa-solid fa-chart-pie"></i> Kết quả phân tích</h2>
+                    <span class="badge-bmi" id="bmiDisplay">BMI: --</span>
+                </div>
+
+                <div class="nutrition-summary">
+                    <div class="nutri-item">
+                        <span class="label">Calo</span>
+                        <span class="value" id="valCalo">0</span>
+                        <span class="unit">kcal</span>
+                    </div>
+                    <div class="nutri-item warning">
+                        <span class="label">Đường</span>
+                        <span class="value" id="valSugar">0</span>
+                        <span class="unit">g</span>
+                    </div>
+                    <div class="nutri-item">
+                        <span class="label">Đạm</span>
+                        <span class="value" id="valProtein">0</span>
+                        <span class="unit">g</span>
+                    </div>
+                </div>
+
+                <div class="risk-charts">
+                    <h3>Nguy cơ bệnh lý (AI Prediction)</h3>
+                    <div class="chart-container">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                    <div class="ai-insight" id="aiInsight">
+                        <!-- AI text will go here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
