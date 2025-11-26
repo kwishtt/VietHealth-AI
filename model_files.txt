@@ -1,3 +1,0 @@
-total 251M
--rw-r--r--. 1 ktmjn ktmjn 251M Nov 26 23:27 health_model.pkl
--rw-rw-rw-. 1 ktmjn ktmjn 4.7K Nov 26 23:26 train_model.py
